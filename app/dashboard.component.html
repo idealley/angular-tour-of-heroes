@@ -1,0 +1,13 @@
+<div class="page-head">
+    <h3>Top Heroes Dasboard</h3>
+</div>
+<hero-search></hero-search>
+<div class="row">
+  <div *ngFor="let hero of heroes" (click)="gotoDetail(hero)" class="col-sm-3">
+    <div class="bs-grid-block" style="background:#eee;">  
+        <div class="content">
+            <h4>{{hero.name}}</h4>
+        </div>
+    </div>
+  </div>
+</div>

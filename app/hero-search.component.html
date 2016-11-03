@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-md-offset-3" style="padding: 0;">
+        <div class="form-group">
+                <input 
+                    class="form-control" 
+                    #searchBox 
+                    id="search-box" 
+                    placeholder="Search Heroes..."
+                    (keyup)="search(searchBox.value)" />
+        </div>
+        <div class="list-group" style="transition: visibility 0s, opacity 2s linear;box-shadow: 0px 10px 25px 0 rgba(100,100,100,.3);width: 100%; z-index:1;position:absolute;padding-right:0;">
+            <div    *ngFor="let hero of heroes | async" 
+                class="list-group-item"
+                (click)="gotoDetail(hero)"> 
+                    <h4>{{hero.name}}</h4>
+            </div>
+        </div>
+    </div>    
+</div>

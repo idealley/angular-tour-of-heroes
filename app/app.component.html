@@ -1,0 +1,16 @@
+        <div class="ers-wrapper ers-full-screen ers-white-header ">
+            <div class="ers-content">
+                <div class="page-head">
+                    <h2>{{title}}</h2>  
+                </div>
+                <div class="main-content" style="height:initial;">
+                    <div class="btn-group btn-group-justified">
+                        <a routerLink="/dashboard" routerLinkActive="active" class="btn btn-primary btn-rad">Dashboard</a>
+                        <a routerLink="/heroes" routerLinkActive="active" class="btn btn-primary btn-rad">Heroes</a>
+                    </div>
+                </div>
+                <div class="main-content">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div> 

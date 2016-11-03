@@ -1,0 +1,34 @@
+        <div class="col-md-6">
+            <ul class="list-group">
+                <li class="list-group-item" 
+                *ngFor="let hero of heroes"
+                (click)="onSelect(hero)"
+                [class.active]="hero === selectedHero"
+                >
+                    <div class="input-group">
+                        <span class="input-group-addon">{{hero.id}} </span>
+                        <input class="form-control" [(ngModel)]="hero.name" placeholder="name">
+                            <span class="input-group-btn"> 
+                                <button class="btn btn-danger" (click)="delete(hero); $event.stopPropagation()">x</button>
+                            </span>
+                    </div>
+                </li>
+            </ul>
+                    <div class="form-group">       
+                        <div class="input-group">
+                            <span class="input-group-addon">Name: </span>
+                            <input class="form-control" #heroName />
+                            <span class="input-group-btn"> 
+                                <button class="btn btn-primary" (click)="add(heroName.value); heroName.value=''">Add</button>
+                            </span>
+                        </div>
+                    </div>   
+        </div>
+          <div *ngIf="selectedHero" class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">{{selectedHero.name | uppercase }} details! </div>
+                <div class="panel-body text-left">
+                    <button class="pull-right btn btn-xs btn-default" (click)="gotoDetail(selectedHero)">Edit</button>                        
+                </div>
+            </div>
+        </div>   
